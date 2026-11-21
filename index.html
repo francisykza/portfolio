@@ -100,15 +100,16 @@
   @keyframes mq { to { transform: translateX(-50%); } }
 
   /* ---------- 01 PRIMOR ---------- */
-  .s-prim { background: var(--cream); color: var(--ink); }
+  .s-prim { --pink: #e61e28; background: var(--cream); color: var(--ink); }
   .s-prim .idx, .s-prim .bignum { color: var(--pink); }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; position: relative; z-index: 2; }
   .s-prim p + p { margin-top: 14px; }
   .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 30px 0; }
-  .stat { background: var(--ink); color: var(--cream); border-radius: 16px; padding: 20px 16px; transition: transform .3s cubic-bezier(.3,1.6,.5,1); }
-  .stat:hover { transform: translateY(-6px) rotate(-2deg); }
-  .stat .num { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: .9; color: var(--pink); font-variant-numeric: tabular-nums; }
-  .stat .lab { font-size: 13.5px; line-height: 1.3; margin-top: 10px; color: #d9d1e2; }
+  .stat { background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 16px; padding: 18px 16px 16px; box-shadow: 6px 6px 0 var(--pink); transition: transform .3s cubic-bezier(.3,1.6,.5,1), box-shadow .3s; }
+  .stat:hover { transform: translate(-3px, -3px) rotate(-1.5deg); box-shadow: 9px 9px 0 var(--ink); }
+  .stat .num::after { content: ""; display: block; width: 34px; height: 5px; border-radius: 3px; background: var(--pink); margin-top: 10px; }
+  .stat .num { font-family: "Bricolage Grotesque"; font-weight: 800; font-size: clamp(32px, 3.6vw, 44px); line-height: .9; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .stat .lab { font-size: 13.5px; line-height: 1.3; margin-top: 10px; color: #3c3546; }
   .tools3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 56px; position: relative; z-index: 2; }
   .t3 { background: var(--paper); border: 2px solid var(--ink); border-radius: 18px; padding: 22px 20px; box-shadow: 6px 6px 0 var(--ink); transition: transform .3s cubic-bezier(.3,1.6,.5,1), box-shadow .3s; }
   .t3:hover { transform: translate(-3px, -3px) rotate(-1deg); box-shadow: 10px 10px 0 var(--pink); }
@@ -117,7 +118,7 @@
   .t3 p { font-size: 14.5px; line-height: 1.45; color: #3c3546; }
   .ba-time { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 14px; font-family: "DM Mono"; font-size: 13px; }
   .ba-time s { color: #8b8496; }
-  .ba-time b { background: var(--mint); color: var(--ink); padding: 3px 9px; border-radius: 999px; font-weight: 500; }
+  .ba-time b { background: var(--ink); color: #fff; padding: 3px 9px; border-radius: 999px; font-weight: 500; }
   .ba-time s { text-decoration-color: var(--pink); text-decoration-thickness: 2px; }
   .ba-time em { flex-basis: 100%; font-style: normal; font-family: "DM Sans"; font-size: 13px; color: #5c5466; }
   .ahorro { display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; margin-top: 30px; background: var(--paper); color: var(--ink); border: 2px solid var(--ink); border-radius: 22px; padding: 30px 34px; position: relative; z-index: 2; box-shadow: 8px 8px 0 var(--ink); }
@@ -125,10 +126,10 @@
   .ahorro:hover .ah-big { transform: rotate(0deg) scale(1.04); }
   .ah-big b { display: block; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: clamp(64px, 8vw, 108px); line-height: .85; color: #fff; font-variant-numeric: tabular-nums; }
   .ah-big span { display: block; margin-top: 10px; font-size: 14px; font-weight: 500; color: #fff; max-width: 190px; margin-left: auto; margin-right: auto; line-height: 1.3; }
-  .ah-big::after { content: "antes → ahora"; position: absolute; top: -13px; right: -14px; background: var(--mint); color: var(--ink); border: 2px solid var(--ink); font-family: "DM Mono"; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; transform: rotate(6deg); }
+  .ah-big::after { content: "antes → ahora"; position: absolute; top: -13px; right: -14px; background: var(--ink); color: #fff; border: 2px solid var(--ink); font-family: "DM Mono"; font-size: 11px; letter-spacing: .05em; text-transform: uppercase; padding: 3px 9px; border-radius: 999px; transform: rotate(6deg); }
   .ah-txt { position: relative; }
   .ah-txt p { margin-bottom: 12px; color: #3c3546; }
-  .ah-txt b { color: var(--ink); background: linear-gradient(transparent 58%, var(--mint) 58%); padding: 0 2px; }
+  .ah-txt b { color: var(--ink); background: linear-gradient(transparent 60%, rgba(230,30,40,.25) 60%); padding: 0 2px; }
   .ah-txt ul.clean li { color: #3c3546; }
   .ah-txt ul.clean li::before { background: var(--pink); }
   .ah-txt small { display: block; margin-top: 10px; color: #6b6477; font-size: 12.5px; }
@@ -537,7 +538,7 @@
 
 <div id="progress" aria-hidden="true"></div>
 <nav class="snav hide" id="snav" aria-label="Secciones">
-  <a href="#s-prim" data-t="s-prim" style="--c:#ff3d8b"><span><em>📦</em>01 Primor</span><i></i></a>
+  <a href="#s-prim" data-t="s-prim" style="--c:#e61e28"><span><em>📦</em>01 Primor</span><i></i></a>
   <a href="#s-cvo" data-t="s-cvo" style="--c:#2b4be0"><span><em>📝</em>02 CV-Optimizer</span><i></i></a>
   <a href="#s-hunt" data-t="s-hunt" style="--c:#2bb684"><span><em>🎯</em>03 Job Hunter</span><i></i></a>
   <a href="#s-tur" data-t="s-tur" style="--c:#c42fb0"><span><em>⏰</em>04 Mis Turnos</span><i></i></a>
