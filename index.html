@@ -51,42 +51,121 @@
   .bignum { position: absolute; top: 30px; right: -40px; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: clamp(220px, 34vw, 460px); line-height: .8; color: transparent; -webkit-text-stroke: 2px currentColor; opacity: .09; pointer-events: none; user-select: none; z-index: 0; }
 
   /* ---------- PORTADA ---------- */
-  .hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 90px 0 70px; }
+  .hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 70px 0 60px; }
   .hero .blob { position: absolute; border-radius: 50%; filter: blur(10px); pointer-events: none; }
   .hero .b1 { width: 720px; height: 720px; right: -200px; top: -260px; background: radial-gradient(circle, rgba(255,61,139,.55), rgba(255,61,139,0) 65%); animation: float1 14s ease-in-out infinite; }
   .hero .b2 { width: 560px; height: 560px; left: 18%; bottom: -330px; background: radial-gradient(circle, rgba(255,181,71,.3), rgba(255,181,71,0) 65%); animation: float2 17s ease-in-out infinite; }
   @keyframes float1 { 50% { transform: translate(-60px, 50px) scale(1.08); } }
   @keyframes float2 { 50% { transform: translate(80px, -40px) scale(.94); } }
   .hero .wrap { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; width: 100%; position: relative; z-index: 2; }
-  .hero .kick { color: var(--pink); margin-bottom: 26px; }
-  .hero h1 { font-size: clamp(56px, 9vw, 118px); font-weight: 800; line-height: .9; letter-spacing: -.03em; }
+  .hero .kick { color: var(--pink); margin-bottom: 18px; }
+  .hero h1 { font-size: clamp(56px, 8vw, 100px); font-weight: 800; line-height: .9; letter-spacing: -.03em; }
   .hero h1 .pink { color: var(--pink); }
   #name .w { display: inline-block; white-space: nowrap; }
   .ltr { display: inline-block; animation: drop .9s cubic-bezier(.2,1.5,.35,1) both; animation-delay: calc(var(--i) * 45ms + 150ms); transition: transform .25s cubic-bezier(.3,1.8,.5,1), color .2s; }
   .ltr:hover { transform: translateY(-14px) rotate(-8deg); color: var(--amber); }
   @keyframes drop { from { transform: translateY(-120px) rotate(-25deg); opacity: 0; } }
-  .role { font-family: "Bricolage Grotesque"; font-size: clamp(22px, 2.6vw, 31px); font-weight: 600; margin-top: 28px; line-height: 1.2; color: #fff; }
+  .role { font-family: "Bricolage Grotesque"; font-size: clamp(22px, 2.6vw, 31px); font-weight: 600; margin-top: 20px; line-height: 1.2; color: #fff; }
   .hl { background: linear-gradient(transparent 58%, rgba(255,61,139,.6) 58%) no-repeat; background-size: 0% 100%; animation: hl 1s cubic-bezier(.6,0,.2,1) forwards; animation-delay: 1.1s; }
   .hl.two { animation-delay: 1.45s; }
   @keyframes hl { to { background-size: 100% 100%; } }
-  .sub { color: var(--soft); margin-top: 20px; max-width: 520px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+  .sub { color: var(--soft); margin-top: 14px; max-width: 520px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  a.chip { text-decoration: none; transition: border-color .2s, background .2s; }
+  a.chip:hover { border-color: var(--pink); background: rgba(255,61,139,.12); }
+  .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 17px; padding: 13px 20px; border-radius: 12px; text-decoration: none; border: 2px solid var(--cream); transition: transform .15s, box-shadow .15s; }
+  .btn.pri { background: var(--pink); color: var(--ink); border-color: var(--ink); box-shadow: 4px 4px 0 var(--cream); }
+  .btn.sec { background: transparent; color: var(--cream); box-shadow: 4px 4px 0 var(--pink); }
+  .btn:hover { transform: translate(-2px, -2px); }
+  .btn.pri:hover { box-shadow: 6px 6px 0 var(--cream); } .btn.sec:hover { box-shadow: 6px 6px 0 var(--pink); }
+  .btn:active { transform: translate(2px, 2px); }
+  .btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .hstats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 18px; max-width: 560px; border: 1.5px solid rgba(246,239,228,.3); border-radius: 14px; background: rgba(21,18,28,.55); overflow: hidden; }
+  .hstats div { padding: 12px 12px 11px; border-left: 1px solid rgba(246,239,228,.18); }
+  .hstats div:first-child { border-left: 0; }
+  .hstats b { display: block; font-family: "Bricolage Grotesque"; font-weight: 800; font-size: clamp(24px, 2.4vw, 32px); line-height: 1; color: var(--pink); font-variant-numeric: tabular-nums; }
+  .hstats div:nth-child(2) b { color: var(--amber); } .hstats div:nth-child(3) b { color: var(--mint); } .hstats div:nth-child(4) b { color: #ff7ce0; }
+  .hstats span { display: block; margin-top: 6px; font-family: "DM Mono"; font-size: 10.5px; line-height: 1.3; letter-spacing: .02em; color: var(--soft); }
   .chip { border: 1px solid rgba(246,239,228,.28); border-radius: 999px; padding: 7px 14px; font-size: 14px; color: var(--cream); background: rgba(21,18,28,.5); }
   .chip b { color: var(--pink); font-weight: 500; font-family: "DM Mono"; font-size: 12px; margin-right: 4px; }
   .collage { position: relative; height: 560px; }
   .collage .card { position: absolute; will-change: transform; }
-  .collage .card img { border: 4px solid #fff; border-radius: 12px; box-shadow: 0 24px 50px rgba(0,0,0,.45); }
+  .collage .card .cin img { border: 1px solid #d6cfc2; border-radius: 8px; }
   .collage .c1 { width: 88%; right: 0; top: 0; --rot: 3deg; }
   .collage .c2 { width: 72%; left: 0; top: 41%; --rot: -5deg; }
   .collage .c3 { width: 54%; right: 3%; top: 64%; --rot: 4deg; }
-  .collage .card > img { transform: rotate(var(--rot)); animation: pop .9s cubic-bezier(.2,1.4,.4,1) both; }
-  .collage .c1 > img { animation-delay: .5s; } .collage .c2 > img { animation-delay: .7s; } .collage .c3 > img { animation-delay: .9s; }
+  .collage .card > .cin { transform: rotate(var(--rot)); animation: pop .9s cubic-bezier(.2,1.4,.4,1) both; background: #fdfbf7; border: 1.5px solid #171614; border-radius: 14px; padding: 8px; box-shadow: 6px 6px 0 rgba(23,22,20,.16); }
+  .collage .c1 > .cin { animation-delay: .5s; } .collage .c2 > .cin { animation-delay: .7s; } .collage .c3 > .cin { animation-delay: .9s; }
   @keyframes pop { from { transform: rotate(calc(var(--rot) * 4)) scale(.4) translateY(80px); opacity: 0; } }
   .sticker { position: absolute; z-index: 5; background: var(--amber); color: var(--ink); font-family: "Bricolage Grotesque"; font-weight: 800; font-size: 16px; padding: 11px 16px; border-radius: 10px; transform: rotate(-6deg); box-shadow: 0 8px 20px rgba(0,0,0,.35); cursor: grab; user-select: none; touch-action: none; animation: wob 3.2s ease-in-out infinite; }
   .sticker:active { cursor: grabbing; }
   .sticker small { display: block; font-family: "DM Mono"; font-weight: 400; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
   @keyframes wob { 50% { transform: rotate(4deg) scale(1.05); } }
-  .scrollhint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 3; display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); }
+  /* ---------- PORTADA · estilo taller: papel, tinta, terracota y nuestro rosa ---------- */
+  .hero { --t-bg: #f4f0e8; --t-surf: #fdfbf7; --t-ink: #171614; --t-mut: #55514a; --t-line: #d6cfc2; --t-terra: #c85a32; --t-forest: #2d5a43; --t-pink: #e8407a;
+    color-scheme: light; color: var(--t-ink); background-color: var(--t-bg);
+    background-image: linear-gradient(to right, rgba(23,22,20,.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(23,22,20,.05) 1px, transparent 1px);
+    background-size: 32px 32px; background-position: -1px -1px; }
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; opacity: .05; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .hero .b1 { filter: none; background: radial-gradient(circle, rgba(232,64,122,.17), rgba(232,64,122,0) 65%); }
+  .hero .b2 { filter: none; background: radial-gradient(circle, rgba(200,90,50,.14), rgba(200,90,50,0) 65%); }
+  .hero .kick { color: var(--t-terra); font-weight: 500; }
+  .hero h1 .pink { background: linear-gradient(90deg, var(--t-pink), var(--t-terra)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero .role { color: var(--t-ink); }
+  .hero .hl { background-image: linear-gradient(transparent 60%, rgba(232,64,122,.32) 60%); }
+  .hero .hl.two { background-image: linear-gradient(transparent 60%, rgba(200,90,50,.3) 60%); }
+  .hero.tw-done .hl { animation-delay: .1s; } .hero.tw-done .hl.two { animation-delay: .4s; }
+  .hero .sub { color: var(--t-mut); }
+  .hero .chip { border: 1.5px solid var(--t-line); background: var(--t-surf); color: var(--t-ink); }
+  .hero .chip b { color: var(--t-terra); }
+  .hero a.chip:hover { border-color: var(--t-ink); background: var(--t-surf); box-shadow: 3px 3px 0 var(--t-pink); }
+  .hero .btn.pri { background: var(--t-ink); color: var(--t-surf); border-color: var(--t-ink); box-shadow: 4px 4px 0 var(--t-pink); }
+  .hero .btn.pri:hover { box-shadow: 6px 6px 0 var(--t-pink); }
+  .hero .btn.sec { background: var(--t-surf); color: var(--t-ink); border-color: var(--t-ink); box-shadow: 4px 4px 0 var(--t-terra); }
+  .hero .btn.sec:hover { box-shadow: 6px 6px 0 var(--t-terra); }
+  .hero .btn:focus-visible, .hero a.chip:focus-visible { outline: 3px solid var(--t-pink); outline-offset: 3px; }
+  .hero .hstats { background: var(--t-surf); border: 1.5px solid var(--t-ink); box-shadow: 4px 4px 0 rgba(23,22,20,.14); }
+  .hero .hstats div { border-color: var(--t-line); }
+  .hero .hstats b { color: var(--t-pink); }
+  .hero .hstats div:nth-child(2) b { color: var(--t-terra); } .hero .hstats div:nth-child(3) b { color: var(--t-forest); } .hero .hstats div:nth-child(4) b { color: var(--t-ink); }
+  .hero .hstats span { color: var(--t-mut); }
+  /* pestaña de cada foto, con su botón para apartarla */
+  .ctab { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 2px 7px; margin-bottom: 7px; border-bottom: 1px solid var(--t-line); font: 500 11.5px "DM Mono", monospace; color: var(--t-ink); white-space: nowrap; }
+  .ctab .grip { color: var(--t-mut); margin-right: 5px; letter-spacing: -.1em; }
+  .cdis { flex: 0 0 auto; width: 26px; height: 26px; border-radius: 7px; border: 1.5px solid var(--t-ink); background: var(--t-surf); color: var(--t-ink); font: 600 13px "DM Mono", monospace; cursor: pointer; display: grid; place-items: center; transition: background .15s, color .15s, transform .15s; }
+  .cdis:hover { background: var(--t-ink); color: var(--t-surf); transform: translateX(2px); }
+  .cdis:focus-visible { outline: 2px solid var(--t-pink); outline-offset: 2px; }
+  .collage .card.fly { transition: translate .55s cubic-bezier(.22,1,.36,1); }
+  .collage .card.nudge { transition: translate .35s cubic-bezier(.34,1.56,.64,1); }
+  /* etiqueta "Arrastra para apartar" y contador */
+  .dpill { position: absolute; left: 2%; bottom: -10px; z-index: 30; display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; background: var(--t-ink); color: var(--t-surf); border: 1.5px solid var(--t-ink); box-shadow: 3px 3px 0 var(--t-pink); font: 500 12px "DM Mono", monospace; pointer-events: none; opacity: 0; transform: translateY(6px); transition: opacity .32s, transform .32s; }
+  .dpill > span { display: inline-flex; align-items: center; gap: 8px; animation: hnudge 2.1s ease-in-out infinite; }
+  .dpill b { color: var(--t-pink); font-weight: 700; }
+  .dpill.on { opacity: 1; transform: none; }
+  .dpill.gone { opacity: 0 !important; transform: translateY(6px) scale(.95) !important; }
+  @keyframes hnudge { 0%, 100% { transform: translateX(0); } 45% { transform: translateX(6px); } 75% { transform: translateX(-2px); } }
+  .ccount { position: absolute; left: 0; top: -30px; z-index: 30; color: var(--t-mut); font-size: 11px; letter-spacing: .04em; }
+  /* la sorpresa de debajo, en papel */
+  .hero .secret { background: none; padding: 0; }
+  .hero .secret-in { background: var(--t-surf); border: 1.5px dashed var(--t-forest); color: var(--t-ink); }
+  .hero .secret .mono { display: inline-block; color: var(--t-forest); background: rgba(45,90,67,.11); border: 1px solid var(--t-forest); border-radius: 5px; padding: 3px 9px; }
+  .hero .secret p { color: var(--t-mut); }
+  .hero .secret .go { background: var(--t-ink); color: var(--t-surf); box-shadow: 3px 3px 0 var(--t-pink); }
+  .hero .secret .reset { background: var(--t-surf); color: var(--t-ink); border: 1.5px solid var(--t-ink); }
+  .hero .secret.found { animation: none; box-shadow: 8px 8px 0 var(--t-ink); border-radius: 16px; }
+  .hero .secret.found .secret-in { border-style: solid; border-color: var(--t-ink); }
+  .hero .secret.found .big { background-image: linear-gradient(90deg, var(--t-pink), var(--t-terra), var(--t-forest), var(--t-pink)); }
+  /* texto que se escribe solo, sin mover nada de sitio */
+  .tw-host { position: relative; }
+  .tw-ghost { display: block; visibility: hidden; }
+  .tw-out { position: absolute; left: 0; top: 0; right: 0; display: block; }
+  .tw-cur { display: inline-block; width: 3px; height: .85em; margin-left: 3px; vertical-align: -.06em; border-radius: 1px; background: var(--t-terra); }
+  .tw-pre { opacity: 0; transform: translateY(12px); }
+  .tw-in { opacity: 1; transform: none; transition: opacity .5s cubic-bezier(.22,1,.36,1), transform .5s cubic-bezier(.22,1,.36,1); }
+  @media (prefers-reduced-motion: reduce) { .dpill > span { animation: none; } }
+
+  .scrollhint { position: absolute; left: 50%; bottom: 22px; transform: translateX(-50%); z-index: 3; display: none; flex-direction: column; align-items: center; gap: 6px; color: var(--muted); }
   .mouse { width: 24px; height: 38px; border: 2px solid var(--muted); border-radius: 14px; position: relative; }
   .mouse::after { content: ""; position: absolute; left: 50%; top: 7px; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--pink); animation: wheel 1.6s ease-in-out infinite; }
   @keyframes wheel { 0% { transform: translateY(0); opacity: 1; } 80% { transform: translateY(14px); opacity: 0; } 100% { opacity: 0; } }
@@ -168,7 +247,7 @@
   .collage .card { cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-drag: none; z-index: 3; }
   .collage .card img { -webkit-user-drag: none; pointer-events: none; }
   .collage .card.grab { cursor: grabbing; }
-  .collage .card.grab img { box-shadow: 0 40px 70px rgba(0,0,0,.55); }
+  .collage .card.grab .cin { box-shadow: 14px 16px 28px rgba(23,22,20,.25); }
   .collage .card.back { transition: translate .8s cubic-bezier(.3,1.5,.5,1); }
   .secret { position: absolute; left: 8%; right: 8%; top: 22%; z-index: 1; border-radius: 24px; padding: 3px; background: linear-gradient(135deg, var(--pink), var(--amber), var(--mint)); opacity: 0; transform: scale(.92); transition: opacity .5s, transform .6s cubic-bezier(.3,1.6,.5,1); }
   .secret-in { background: #1b1624; border-radius: 21px; padding: 30px 26px; text-align: center; }
@@ -386,6 +465,11 @@
   .s4 h3 { font-size: 22px; margin: 10px 0 8px; }
   .s4 p { font-size: 15px; line-height: 1.45; }
   .bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; position: relative; z-index: 2; }
+  .tgroups { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .tgroups h4 { font-family: "Bricolage Grotesque"; font-size: 17px; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .tgroups h4 i { width: 10px; height: 10px; border-radius: 3px; background: var(--ink); transform: rotate(45deg); }
+  .tgroups > div:nth-child(2) h4 i { background: #fff; border: 2px solid var(--ink); }
+  .tgroups > div:nth-child(3) h4 i { background: var(--amber); border: 2px solid var(--ink); }
   .tools .tag { background: var(--ink); color: var(--cream); font-size: 12.5px; padding: 6px 12px; transition: transform .2s cubic-bezier(.3,1.8,.5,1); }
   .tools .tag:hover { transform: translateY(-4px) rotate(-4deg); background: #fff; color: var(--ink); }
   .contact-card { background: var(--ink); color: var(--cream); border-radius: 22px; padding: 32px; position: relative; }
@@ -394,7 +478,9 @@
   .crow { display: flex; align-items: center; gap: 10px; padding: 9px 0; border-top: 1px solid #2e2838; font-size: 16px; word-break: break-word; }
   .crow:first-of-type { border-top: 0; }
   .crow b { color: var(--pink); font-weight: 500; font-family: "DM Mono"; font-size: 12px; width: 34px; flex: 0 0 auto; }
-  .crow span { flex: 1; user-select: all; }
+  .crow span, .crow a { flex: 1; user-select: all; }
+  .crow a { color: var(--cream); text-decoration: none; border-bottom: 1px solid #4a4256; }
+  .crow a:hover { color: var(--pink); border-color: var(--pink); }
   .copy { flex: 0 0 auto; font: 500 12px "DM Mono", monospace; letter-spacing: .05em; text-transform: uppercase; color: var(--ink); background: var(--amber); border: 0; border-radius: 8px; padding: 7px 10px; cursor: pointer; transition: transform .2s cubic-bezier(.3,1.8,.5,1); }
   .copy:hover { transform: scale(1.08) rotate(-3deg); }
   .copy:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
@@ -451,6 +537,11 @@
 
   /* ---------- móvil ---------- */
   @media (max-width: 900px) {
+    .hstats { grid-template-columns: 1fr 1fr; }
+    .hstats div:nth-child(3) { border-left: 0; }
+    .hstats div:nth-child(n+3) { border-top: 1px solid rgba(246,239,228,.18); }
+    .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 15px; padding: 12px 10px; white-space: nowrap; }
+    .tgroups { grid-template-columns: 1fr; gap: 14px; }
     body { font-size: 16px; }
     section { padding: 80px 0; }
     .s-tur { --pt: 80px; }
@@ -555,12 +646,21 @@
       <h1 id="name"><span class="w">Francisco</span><br><span class="w">Muñoz</span> <span class="w pink">Dorado</span></h1>
       <div class="role">Implementación de <span class="hl">IA</span> y <span class="hl two">automatización</span>,<br>pensada para la gente que la usa.</div>
       <p class="sub">Detecto el trabajo manual que le quita tiempo a un equipo y lo convierto en herramientas que se usan de verdad: flujos automatizados, asistentes con IA y aplicaciones propias en producción.</p>
+      <div class="ctas">
+        <a class="btn pri" href="#s-prim">Ver proyectos <span aria-hidden="true">↓</span></a>
+        <a class="btn sec" href="CV_Francisco_Munoz_Dorado.pdf" download>Descargar CV <span class="mono" style="font-size:11px">PDF</span></a>
+      </div>
       <div class="chips">
-        <span class="chip"><b>tel</b>+34 611 148 162</span>
-        <span class="chip"><b>mail</b>frandorado8gg@gmail.com</span>
-        <span class="chip"><b>in</b>linkedin.com/in/franciscomunozdorado</span>
-        <span class="chip"><b>gh</b>github.com/francisykza</span>
+        <a class="chip" href="mailto:frandorado8gg@gmail.com" title="frandorado8gg@gmail.com"><b>mail</b>Email ↗</a>
+        <a class="chip" href="https://www.linkedin.com/in/franciscomunozdorado" target="_blank" rel="noopener"><b>in</b>LinkedIn ↗</a>
+        <a class="chip" href="https://github.com/francisykza" target="_blank" rel="noopener"><b>gh</b>GitHub ↗</a>
         <span class="chip"><b>Málaga</b>· carnet B y coche</span>
+      </div>
+      <div class="hstats" aria-label="En números">
+        <div><b data-count="5" data-suffix="">5</b><span>proyectos reales</span></div>
+        <div><b data-count="250" data-suffix="+">250+</b><span>mejoras en Devoluciones</span></div>
+        <div><b data-count="570" data-suffix="+">570+</b><span>tests en CV-Optimizer</span></div>
+        <div><b data-count="144" data-suffix="">144</b><span>versiones de Libotown</span></div>
       </div>
     </div>
     <div class="collage" id="collage">
@@ -572,10 +672,11 @@
           <div class="btns"><button class="go" id="goHow">Ver cómo trabajo ↓</button><button class="reset" id="reset">Recolocar fotos</button></div>
         </div>
       </div>
-      <div class="card c1" data-depth="0.18"><img src="img/hotel.webp" alt="Libotown: el Gran Hotel del Puerto" draggable="false"></div>
-      <div class="card c2" data-depth="0.32"><img src="img/cvo-hero.webp" alt="Portada de CV-Optimizer" draggable="false"></div>
-      <div class="card c3" data-depth="0.5"><img src="img/hunter.webp" alt="Ranking de ofertas del Job Hunter" draggable="false"></div>
-      <div class="sticker drag" style="right: 4%; top: 30%;">5 proyectos reales ↓<small>aparta las fotos: hay algo debajo</small></div>
+      <div class="card c1" data-depth="0.18"><div class="cin"><div class="ctab"><span><span class="grip">⋮⋮</span>05 · Libotown</span><button class="cdis" type="button" aria-label="Apartar la foto de Libotown">→</button></div><img src="img/hotel.webp" alt="Libotown: el Gran Hotel del Puerto" draggable="false"></div></div>
+      <div class="card c2" data-depth="0.32"><div class="cin"><div class="ctab"><span><span class="grip">⋮⋮</span>02 · CV-Optimizer</span><button class="cdis" type="button" aria-label="Apartar la foto de CV-Optimizer">→</button></div><img src="img/cvo-hero.webp" alt="Portada de CV-Optimizer" draggable="false"></div></div>
+      <div class="card c3" data-depth="0.5"><div class="cin"><div class="ctab"><span><span class="grip">⋮⋮</span>03 · Job Hunter</span><button class="cdis" type="button" aria-label="Apartar la foto de Job Hunter">→</button></div><img src="img/hunter.webp" alt="Ranking de ofertas del Job Hunter" draggable="false"></div></div>
+      <div class="dpill" id="dpill" aria-hidden="true"><span><b>⇄</b>Arrastra para apartar</span></div>
+      <div class="mono ccount" id="ccount">3 fotos · arrastra o pulsa →</div>
     </div>
   </div>
   <div class="scrollhint"><div class="mouse"></div><span class="mono" style="font-size:10px">baja</span></div>
@@ -812,17 +913,7 @@
 </section>
 
 <!-- EN NÚMEROS -->
-<section class="s-num" id="s-num">
-  <div class="wrap">
-    <div class="mono" style="color:var(--pink); margin-bottom:26px">En números</div>
-    <div class="nums">
-      <div><b data-count="5" data-suffix="">5</b><span>proyectos reales en uso o en producción</span></div>
-      <div><b data-count="570" data-suffix="+">570+</b><span>tests automatizados en CV-Optimizer</span></div>
-      <div><b data-count="250" data-suffix="+">250+</b><span>mejoras en la herramienta de Devoluciones</span></div>
-      <div><b data-count="144" data-suffix="">144</b><span>versiones publicadas de Libotown</span></div>
-    </div>
-  </div>
-</section>
+
 
 <!-- 06 CÓMO TRABAJO -->
 <section class="s-how" id="s-how">
@@ -838,15 +929,19 @@
     <div class="bottom">
       <div class="tools rv-l">
         <div class="mono" style="margin-bottom:14px">Herramientas</div>
-        <span class="tag">n8n</span><span class="tag">Zapier</span><span class="tag">Power Automate</span><span class="tag">Apps Script</span><span class="tag">APIs REST</span><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">SQL</span><span class="tag">React</span><span class="tag">LLMs por API</span><span class="tag">Prompts</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Git</span><span class="tag">Google Workspace</span><span class="tag">Excel avanzado</span>
+        <div class="tgroups">
+          <div><h4><i></i>Automatización</h4><span class="tag">n8n</span><span class="tag">Zapier</span><span class="tag">Power Automate</span><span class="tag">Apps Script</span><span class="tag">APIs REST</span></div>
+          <div><h4><i></i>IA y backend</h4><span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">LLMs por API</span><span class="tag">Prompts</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">SQL</span></div>
+          <div><h4><i></i>Frontend y datos</h4><span class="tag">React</span><span class="tag">Git</span><span class="tag">Google Workspace</span><span class="tag">Excel avanzado</span></div>
+        </div>
         <p style="margin-top:18px; font-size:15.5px; max-width:560px">AI Engineering en 4Geeks Academy (en curso) · Certificado de Profesionalidad Nivel 3 en Gestión de Sistemas Informáticos · Inglés C1.</p>
       </div>
       <div class="contact-card rv-pop" id="contact">
         <h3>¿Hablamos?<br><span>Te enseño los proyectos en directo.</span></h3>
-        <div class="crow"><b>tel</b><span>+34 611 148 162</span><button class="copy" data-copy="+34611148162">Copiar</button></div>
         <div class="crow"><b>mail</b><span>frandorado8gg@gmail.com</span><button class="copy" data-copy="frandorado8gg@gmail.com">Copiar</button></div>
-        <div class="crow"><b>in</b><span>linkedin.com/in/franciscomunozdorado</span></div>
-        <div class="crow"><b>gh</b><span>github.com/francisykza</span></div>
+        <div class="crow"><b>in</b><a href="https://www.linkedin.com/in/franciscomunozdorado" target="_blank" rel="noopener">linkedin.com/in/franciscomunozdorado</a></div>
+        <div class="crow"><b>gh</b><a href="https://github.com/francisykza" target="_blank" rel="noopener">github.com/francisykza</a></div>
+        <div class="crow"><b>cv</b><a href="CV_Francisco_Munoz_Dorado.pdf" download>Descargar CV en PDF</a></div>
       </div>
     </div>
   </div>
@@ -863,19 +958,6 @@
 <script>
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Letras del nombre que caen una a una (el texto ya está visible sin JS)
-  var idx = 0;
-  document.querySelectorAll('#name .w').forEach(function (w) {
-    var txt = w.textContent; w.textContent = '';
-    w.setAttribute('aria-label', txt);
-    Array.from(txt).forEach(function (ch) {
-      var s = document.createElement('span');
-      s.className = 'ltr'; s.textContent = ch; s.style.setProperty('--i', idx++);
-      s.setAttribute('aria-hidden', 'true');
-      w.appendChild(s);
-    });
-  });
 
   // Barra de progreso + parallax del collage + velocidad de la cinta
   var bar = document.getElementById('progress');
@@ -1018,10 +1100,35 @@
   var hero = document.querySelector('.hero');
   var zTop = 3, found = false;
   function offCount() { return cards.filter(function (c) { return c.classList.contains('off'); }).length; }
+  var pill = document.getElementById('dpill'), counter = document.getElementById('ccount'), touched = false;
+  function hideHint() { touched = true; pill.classList.add('gone'); pill.classList.remove('on'); }
+  function updCount() {
+    var r = cards.length - offCount();
+    counter.textContent = r > 1 ? r + ' fotos · arrastra o pulsa →' : r === 1 ? '1 foto · arrastra para ver qué hay debajo →' : '0 fotos · mesa despejada';
+  }
+  function afterMove() {
+    var n = offCount();
+    secret.classList.toggle('peek', n > 0 && !found);
+    updCount();
+    if (n === cards.length && !found) celebrate();
+  }
+  function showHint() {
+    if (touched) return;
+    pill.classList.remove('gone'); pill.classList.add('on');
+    var top = cards[cards.length - 1];
+    if (reduce || top.classList.contains('off')) return;
+    top.classList.add('nudge'); top.style.translate = '16px -2px';
+    setTimeout(function () {
+      if (!touched) top.style.translate = '0px 0px';
+      setTimeout(function () { top.classList.remove('nudge'); }, 380);
+    }, 350);
+  }
   cards.forEach(function (c) {
     var sx, sy, ox = 0, oy = 0, drag = false;
     c.addEventListener('pointerdown', function (e) {
-      drag = true; c.classList.remove('back');
+      if (e.target.closest('.cdis')) return;
+      hideHint();
+      drag = true; c.classList.remove('back', 'nudge');
       sx = e.clientX - ox; sy = e.clientY - oy;
       try { c.setPointerCapture(e.pointerId); } catch (err) {}
       c.classList.add('grab'); c.style.zIndex = ++zTop;
@@ -1036,13 +1143,19 @@
       drag = false; c.classList.remove('grab');
       var lim = Math.min(140, c.offsetWidth * 0.45);
       c.classList.toggle('off', Math.hypot(ox, oy) > lim);
-      var n = offCount();
-      secret.classList.toggle('peek', n > 0 && !found);
-      if (n === cards.length && !found) celebrate();
+      afterMove();
     }
     c.addEventListener('pointerup', end);
     c.addEventListener('pointercancel', end);
     c.resetPos = function () { ox = 0; oy = 0; c.classList.add('back'); c.classList.remove('off'); c.style.translate = '0px 0px'; };
+    c.fly = function () {
+      hideHint();
+      ox = Math.max(240, c.offsetWidth * .8); oy = c.classList.contains('c1') ? -110 : c.classList.contains('c2') ? 150 : 30;
+      c.classList.remove('back', 'nudge'); c.classList.add('fly', 'off'); c.style.zIndex = ++zTop;
+      c.style.translate = ox + 'px ' + oy + 'px';
+      setTimeout(function () { c.classList.remove('fly'); }, 560);
+      afterMove();
+    };
   });
   function celebrate() {
     found = true;
@@ -1058,7 +1171,67 @@
   document.getElementById('reset').addEventListener('click', function () {
     found = false; secret.classList.remove('found', 'peek');
     cards.forEach(function (c) { c.resetPos(); });
+    updCount(); touched = false; setTimeout(showHint, 500);
   });
+  document.querySelectorAll('.cdis').forEach(function (b) {
+    b.addEventListener('pointerdown', function (e) { e.stopPropagation(); });
+    b.addEventListener('click', function (e) { e.stopPropagation(); b.closest('.card').fly(); });
+  });
+
+  // Portada: el texto se escribe solo, sin mover nada de sitio, y luego aparece lo demás
+  (function () {
+    var heroEl = document.querySelector('.hero');
+    var typed = [heroEl.querySelector('.kick'), document.getElementById('name'), heroEl.querySelector('.role')];
+    var rest = ['.sub', '.ctas', '.chips', '.hstats', '.ccount'].map(function (q) { return heroEl.querySelector(q); });
+    var speed = [18, 34, 15];
+    if (reduce) { setTimeout(showHint, 400); return; }
+    function esc(t) { return t.replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+    function segs(el) {
+      var out = [];
+      el.childNodes.forEach(function (n) {
+        if (n.nodeType === 3) out.push({ t: n.textContent.replace(/\s+/g, ' '), c: '' });
+        else if (n.nodeName === 'BR') out.push({ br: true });
+        else out.push({ t: n.textContent, c: n.classList.contains('pink') ? 'pink' : '' });
+      });
+      return out;
+    }
+    function render(sg, n, cur) {
+      var h = '', left = n;
+      for (var k = 0; k < sg.length && left > 0; k++) {
+        var g = sg[k];
+        if (g.br) { h += '<br>'; continue; }
+        var piece = esc(g.t.slice(0, left)); left -= g.t.length;
+        h += g.c ? '<span class="' + g.c + '">' + piece + '</span>' : piece;
+      }
+      return h + (cur ? '<i class="tw-cur"></i>' : '');
+    }
+    var jobs = typed.map(function (el) {
+      var html = el.innerHTML, sg = segs(el), total = 0;
+      sg.forEach(function (g) { if (!g.br) total += g.t.length; });
+      el.setAttribute('aria-label', el.textContent.replace(/\s+/g, ' ').trim());
+      el.classList.add('tw-host');
+      el.innerHTML = '<span class="tw-ghost" aria-hidden="true">' + html + '</span><span class="tw-out" aria-hidden="true"></span>';
+      return { el: el, html: html, sg: sg, total: total, out: el.querySelector('.tw-out') };
+    });
+    rest.forEach(function (el) { if (el) el.classList.add('tw-pre'); });
+    function finish() {
+      jobs.forEach(function (j) { if (j.el.classList.contains('tw-host')) { j.el.classList.remove('tw-host'); j.el.innerHTML = j.html; j.el.removeAttribute('aria-label'); } });
+      heroEl.classList.add('tw-done');
+      rest.forEach(function (el, k) { if (el) setTimeout(function () { el.classList.add('tw-in'); el.classList.remove('tw-pre'); }, k * 90); });
+      setTimeout(showHint, rest.length * 90 + 300);
+    }
+    var safety = setTimeout(finish, 6000);
+    var q = 0, n = 0;
+    function step() {
+      var j = jobs[q];
+      if (!j) { clearTimeout(safety); finish(); return; }
+      n++;
+      j.out.innerHTML = render(j.sg, n, true);
+      if (n >= j.total) { j.out.innerHTML = render(j.sg, n, false); q++; n = 0; setTimeout(step, 90); return; }
+      setTimeout(step, speed[q]);
+    }
+    setTimeout(step, 150);
+  })();
   document.getElementById('goHow').addEventListener('click', function () {
     document.querySelector('.s-how').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
   });
